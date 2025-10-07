@@ -402,7 +402,7 @@
         <div class="filters">
             <div class="filter-group">
                 <label>Tipo:</label>
-                <select id="filterType">
+                <select id="filterType" onchange="filterProperties()">
                     <option value="all">Todas</option>
                     <option value="casa">Casas</option>
                     <option value="terreno">Terrenos</option>
@@ -410,7 +410,7 @@
                 </select>
 
                 <label>Ciudad:</label>
-                <select id="filterCity">
+                <select id="filterCity" onchange="filterProperties()">
                     <option value="all">Todas</option>
                     <option value="tulancingo">Tulancingo</option>
                     <option value="cuautepec">Cuautepec</option>
@@ -418,12 +418,6 @@
                     <option value="jaltepec">Jaltepec</option>
                     <option value="santiago">Santiago Tulantepec</option>
                 </select>
-
-                <label>Precio Máximo:</label>
-                <input type="number" id="filterPrice" placeholder="Ej: 2000000" step="100000">
-
-                <button onclick="filterProperties()" style="padding: 10px 20px; background: #667eea; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;">Filtrar</button>
-                <button onclick="resetFilters()" style="padding: 10px 20px; background: #f59e0b; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;">Limpiar</button>
             </div>
         </div>
 
@@ -451,7 +445,7 @@
             <div class="property-card" data-type="casa" data-city="tulancingo" data-price="3800000">
                 <div class="image-gallery">
                     <div class="property-image" onclick="openModal('folio14', 0)">
-                        <img src="https://i.ibb.co/N6NyhXdf/Folio-14.jpg" alt="Casa">
+                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870928/Folio_14_sacc95.jpg" alt="Casa">
                     </div>
                 </div>
                 <div class="property-header">
@@ -477,7 +471,7 @@
             <div class="property-card" data-type="terreno" data-city="tulancingo" data-price="10560000">
                 <div class="image-gallery">
                     <div class="property-image" onclick="openModal('folio15', 0)">
-                        <img src="https://i.ibb.co/dJH6cSjk/Folio-15.jpg" alt="Terreno">
+                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870928/Folio_15_fmtn0u.jpg" alt="Terreno">
                     </div>
                 </div>
                 <div class="property-header">
@@ -522,7 +516,7 @@
             <div class="property-card" data-type="casa" data-city="tulancingo" data-price="5800000">
                 <div class="image-gallery">
                     <div class="property-image" onclick="openModal('folio17', 0)">
-                        <img src="https://i.ibb.co/v0xYZ98/Folio-17.jpg" alt="Casa">
+                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870929/Folio_17_k79ntb.jpg" alt="Casa">
                     </div>
                 </div>
                 <div class="property-header">
@@ -548,7 +542,7 @@
             <div class="property-card" data-type="terreno" data-city="tulancingo" data-price="285000">
                 <div class="image-gallery">
                     <div class="property-image" onclick="openModal('folio18', 0)">
-                        <img src="https://i.ibb.co/vrkqQsZ/Folio-18.jpg" alt="Terreno">
+                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870929/Folio_18_ygcbg2.jpg" alt="Terreno">
                     </div>
                 </div>
                 <div class="property-header">
@@ -569,7 +563,7 @@
             <div class="property-card" data-type="casa" data-city="santiago" data-price="850000">
                 <div class="image-gallery">
                     <div class="property-image" onclick="openModal('folio19', 0)">
-                        <img src="https://i.ibb.co/hJKqvFjY/Folio-19.jpg" alt="Casa">
+                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870929/Folio_19_illxrf.jpg" alt="Casa">
                     </div>
                 </div>
                 <div class="property-header">
@@ -594,7 +588,11 @@
             <div class="property-card" data-type="casa" data-city="tulancingo" data-price="1500000">
                 <div class="image-gallery">
                     <div class="property-image" onclick="openModal('folio20', 0)">
-                        <img src="https://i.ibb.co/DfMJg7nW/Folio-20.jpg" alt="Casa">
+                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870944/Folio_20_l6tqt5.jpg" alt="Casa">
+                    </div>
+                </div><div class="image-gallery">
+                    <div class="property-image" onclick="openModal('folio20', 0)">
+                        <img src="https://i.ibb.co/DfMJg7n/Folio-20.jpg" alt="Casa">
                     </div>
                 </div>
                 <div class="property-header">
@@ -620,7 +618,7 @@
             <div class="property-card" data-type="casa" data-city="tulancingo" data-price="1950000">
                 <div class="image-gallery">
                     <div class="property-image" onclick="openModal('folio21', 0)">
-                        <img src="https://i.ibb.co/hJ739j5b/Folio-21-1.jpg" alt="Casa Habitación">
+                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870944/Folio_21_1_qd1sbm.jpg" alt="Casa Habitación">
                     </div>
                     <div class="gallery-counter">1 / 4</div>
                 </div>
@@ -645,7 +643,7 @@
             <div class="property-card" data-type="terreno" data-city="acaxochitlan" data-price="0">
                 <div class="image-gallery">
                     <div class="property-image" onclick="openModal('folio22', 0)">
-                        <img src="https://i.ibb.co/dsVcQZvg/Folio-22.jpg" alt="Terreno">
+                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870960/Folio_22_reffn7.jpg" alt="Terreno">
                     </div>
                 </div>
                 <div class="property-header">
@@ -667,7 +665,7 @@
             <div class="property-card" data-type="terreno" data-city="tulancingo" data-price="0">
                 <div class="image-gallery">
                     <div class="property-image" onclick="openModal('folio23', 0)">
-                        <img src="https://i.ibb.co/RpFFhZc4/Folio-23.jpg" alt="Terreno Comercial">
+                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870960/Folio_23_btie8o.jpg" alt="Terreno Comercial">
                     </div>
                 </div>
                 <div class="property-header">
@@ -690,7 +688,7 @@
             <div class="property-card" data-type="casa" data-city="tulancingo" data-price="1150000">
                 <div class="image-gallery">
                     <div class="property-image" onclick="openModal('folio24', 0)">
-                        <img src="https://i.ibb.co/jkY3nDSF/Folio-24.jpg" alt="Casa">
+                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870960/Folio_24_entosb.jpg" alt="Casa">
                     </div>
                 </div>
                 <div class="property-header">
@@ -712,9 +710,9 @@
             <div class="property-card" data-type="hectareas" data-city="tulancingo" data-price="0">
                 <div class="image-gallery">
                     <div class="property-image" onclick="openModal('folio25', 0)">
-                        <img src="https://i.ibb.co/Rp9MsVQX/Folio-25-1.jpg" alt="Hectáreas">
+                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870961/Folio_25_2_mvd2gz.jpg" alt="Hectáreas">
                     </div>
-                    <div class="gallery-counter">1 / 3</div>
+                    <div class="gallery-counter">1 / 2</div>
                 </div>
                 <div class="property-header">
                     <div class="property-folio">FOLIO 25</div>
@@ -735,7 +733,7 @@
             <div class="property-card" data-type="terreno" data-city="tulancingo" data-price="500000">
                 <div class="image-gallery">
                     <div class="property-image" onclick="openModal('folio26', 0)">
-                        <img src="https://i.ibb.co/yrKgx7m/Folio-26.jpg" alt="Terreno">
+                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870961/Folio_26_vlvyld.jpg" alt="Terreno">
                     </div>
                 </div>
                 <div class="property-header">
@@ -872,48 +870,45 @@
             'folio3': [],
             'folio4': [],
             'folio5': [],
-            'folio6': ['https://i.ibb.co/fdkgpN7/Folio-6.jpg'],
-            'folio7': ['https://i.ibb.co/WvcKnTp/Folio-7.jpg'],
-            'folio8': ['https://i.ibb.co/Tqp8vQz/Folio-8.jpg'],
-            'folio9': ['https://i.ibb.co/ym3Dp1T/Folio-9.jpg'],
-            'folio10': ['https://i.ibb.co/DDZRFT7/Folio-10.jpg'],
-            'folio11': ['https://i.ibb.co/tPzRrYK/Folio-11.jpg'],
-            'folio12': ['https://i.ibb.co/yn8HLnN/Folio-12.jpg'],
-            'folio13': ['https://i.ibb.co/3mRJpz2/Folio-13.jpg'],
-            'folio14': ['https://i.ibb.co/N6NyhXd/Folio-14.jpg'],
-            'folio15': ['https://i.ibb.co/dJH6cSj/Folio-15.jpg'],
-            'folio16': ['https://i.ibb.co/rG36Yb3/Folio-16.jpg'],
-            'folio17': ['https://i.ibb.co/v0xYZ98/Folio-17.jpg'],
-            'folio18': ['https://i.ibb.co/vrkqQsZ/Folio-18.jpg'],
-            'folio19': ['https://i.ibb.co/hJKqvFj/Folio-19.jpg'],
-            'folio20': ['https://i.ibb.co/DfMJg7n/Folio-20.jpg'],
+            'folio6': ['https://res.cloudinary.com/diew9lmus/image/upload/v1759870917/Folio_6_sfr8r2.jpg'],
+            'folio7': ['https://res.cloudinary.com/diew9lmus/image/upload/v1759870917/Folio_7_jquczd.jpg'],
+            'folio8': ['https://res.cloudinary.com/diew9lmus/image/upload/v1759870917/Folio_8_gmw2l3.jpg'],
+            'folio9': ['https://res.cloudinary.com/diew9lmus/image/upload/v1759870917/Folio_9_o0s6b0.jpg'],
+            'folio10': ['https://res.cloudinary.com/diew9lmus/image/upload/v1759870918/Folio_10_nbryov.jpg'],
+            'folio11': ['https://res.cloudinary.com/diew9lmus/image/upload/v1759870918/Folio_11_y7lgbn.jpg'],
+            'folio12': ['https://res.cloudinary.com/diew9lmus/image/upload/v1759870918/Folio_12_hwbh16.jpg'],
+            'folio13': ['https://res.cloudinary.com/diew9lmus/image/upload/v1759870919/Folio_13_cyijsq.jpg'],
+            'folio14': ['https://res.cloudinary.com/diew9lmus/image/upload/v1759870928/Folio_14_sacc95.jpg'],
+            'folio15': ['https://res.cloudinary.com/diew9lmus/image/upload/v1759870928/Folio_15_fmtn0u.jpg'],
+            'folio16': ['https://res.cloudinary.com/diew9lmus/image/upload/v1759870928/Folio_16_psrc4q.jpg'],
+            'folio17': ['https://res.cloudinary.com/diew9lmus/image/upload/v1759870929/Folio_17_k79ntb.jpg'],
+            'folio18': ['https://res.cloudinary.com/diew9lmus/image/upload/v1759870929/Folio_18_ygcbg2.jpg'],
+            'folio19': ['https://res.cloudinary.com/diew9lmus/image/upload/v1759870929/Folio_19_illxrf.jpg'],
+            'folio20': ['https://res.cloudinary.com/diew9lmus/image/upload/v1759870944/Folio_20_l6tqt5.jpg'],
             'folio21': [
-                'https://i.ibb.co/hJ739j5/Folio-21-1.jpg',
-                'https://i.ibb.co/LDvNHnQ/Folio-21-2.jpg',
-                'https://i.ibb.co/rf7zt7L/Folio-21-3.jpg',
-                'https://i.ibb.co/XrD3xvb/Folio-21-4.jpg'
+                'https://res.cloudinary.com/diew9lmus/image/upload/v1759870944/Folio_21_1_qd1sbm.jpg',
+                'https://res.cloudinary.com/diew9lmus/image/upload/v1759870945/Folio_21_2_ta429y.jpg',
+                'https://res.cloudinary.com/diew9lmus/image/upload/v1759870944/Folio_21_3_jvldrc.jpg',
+                'https://res.cloudinary.com/diew9lmus/image/upload/v1759870944/Folio_21_4_jpx5au.jpg'
             ],
-            'folio22': ['https://i.ibb.co/dsVcQZv/Folio-22.jpg'],
-            'folio23': ['https://i.ibb.co/RpFFhZc/Folio-23.jpg'],
-            'folio24': ['https://i.ibb.co/jkY3nDS/Folio-24.jpg'],
+            'folio22': ['https://res.cloudinary.com/diew9lmus/image/upload/v1759870960/Folio_22_reffn7.jpg'],
+            'folio23': ['https://res.cloudinary.com/diew9lmus/image/upload/v1759870960/Folio_23_btie8o.jpg'],
+            'folio24': ['https://res.cloudinary.com/diew9lmus/image/upload/v1759870960/Folio_24_entosb.jpg'],
             'folio25': [
-                'https://i.ibb.co/Rp9MsVQ/Folio-25-1.jpg',
-                'https://i.ibb.co/mFYXLkn/Folio-25-2.jpg',
-                'https://i.ibb.co/7ts2Nry/Folio-25-3.jpg'
+                'https://res.cloudinary.com/diew9lmus/image/upload/v1759870961/Folio_25_2_mvd2gz.jpg',
+                'https://res.cloudinary.com/diew9lmus/image/upload/v1759870961/Folio_25_3_kljx9u.jpg'
             ],
-            'folio26': ['https://i.ibb.co/yrKgx7m/Folio-26.jpg'],
-            'folio27': ['https://i.ibb.co/dsX5cdk/Folio-27.jpg'],
+            'folio26': ['https://res.cloudinary.com/diew9lmus/image/upload/v1759870961/Folio_26_vlvyld.jpg'],
+            'folio27': ['https://res.cloudinary.com/diew9lmus/image/upload/v1759870961/Folio_27_wad9jc.jpg'],
             'folio28': [
-                'https://i.ibb.co/S7Mr93s/Folio-28-1.jpg',
-                'https://i.ibb.co/mrC2s54/Folio-28-2.jpg',
-                'https://i.ibb.co/cS401sK/Folio-28-3.jpg'
+                'https://res.cloudinary.com/diew9lmus/image/upload/v1759870974/Folio_28_1_iwh6fk.jpg',
+                'https://res.cloudinary.com/diew9lmus/image/upload/v1759870974/Folio_28_2_iqjbsi.jpg'
             ],
             'folio29': [
-                'https://i.ibb.co/DPWtzTr/Folio-29-1.jpg',
-                'https://i.ibb.co/FkbhtQq/Folio-29-2.jpg',
-                'https://i.ibb.co/YT01WVF/Folio-29-3.jpg',
-                'https://i.ibb.co/dsfkxZ1/Folio-29-4.jpg',
-                'https://i.ibb.co/6cvPNKx/Folio-29-5.jpg'
+                'https://res.cloudinary.com/diew9lmus/image/upload/v1759870975/Folio_29_1_agsgtr.jpg',
+                'https://res.cloudinary.com/diew9lmus/image/upload/v1759870975/Folio_29_2_e4qhwt.jpg',
+                'https://res.cloudinary.com/diew9lmus/image/upload/v1759870991/Folio_29_4_dsbva2.jpg',
+                'https://res.cloudinary.com/diew9lmus/image/upload/v1759870991/Folio_29_6_o6gqwg.jpg'
             ]
         };
 
@@ -949,7 +944,6 @@
         function filterProperties() {
             const type = document.getElementById('filterType').value;
             const city = document.getElementById('filterCity').value;
-            const maxPrice = document.getElementById('filterPrice').value;
 
             const allCards = document.querySelectorAll('.property-card');
             let visibleCount = 0;
@@ -957,7 +951,6 @@
             allCards.forEach(card => {
                 const cardType = card.getAttribute('data-type');
                 const cardCity = card.getAttribute('data-city');
-                const cardPrice = parseInt(card.getAttribute('data-price'));
 
                 let show = true;
 
@@ -969,28 +962,11 @@
                     show = false;
                 }
 
-                if (maxPrice && cardPrice > 0 && cardPrice > parseInt(maxPrice)) {
-                    show = false;
-                }
-
                 card.style.display = show ? 'flex' : 'none';
                 if (show) visibleCount++;
             });
 
             document.getElementById('noResults').style.display = visibleCount === 0 ? 'block' : 'none';
-        }
-
-        function resetFilters() {
-            document.getElementById('filterType').value = 'all';
-            document.getElementById('filterCity').value = 'all';
-            document.getElementById('filterPrice').value = '';
-            
-            const allCards = document.querySelectorAll('.property-card');
-            allCards.forEach(card => {
-                card.style.display = 'flex';
-            });
-
-            document.getElementById('noResults').style.display = 'none';
         }
 
         // Cerrar modal con tecla ESC
@@ -1137,7 +1113,7 @@
             <div class="property-card" data-type="terreno" data-city="tulancingo" data-price="1404000">
                 <div class="image-gallery">
                     <div class="property-image" onclick="openModal('folio7', 0)">
-                        <img src="https://i.ibb.co/WvcKnTp/Folio-7.jpg" alt="Terreno">
+                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870917/Folio_7_jquczd.jpg" alt="Terreno">
                     </div>
                 </div>
                 <div class="property-header">
@@ -1160,7 +1136,7 @@
             <div class="property-card" data-type="casa" data-city="tulancingo" data-price="950000">
                 <div class="image-gallery">
                     <div class="property-image" onclick="openModal('folio8', 0)">
-                        <img src="https://i.ibb.co/Tqp8vQzX/Folio-8.jpg" alt="Casa">
+                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870917/Folio_8_gmw2l3.jpg" alt="Casa">
                     </div>
                 </div>
                 <div class="property-header">
@@ -1185,7 +1161,7 @@
             <div class="property-card" data-type="terreno" data-city="jaltepec" data-price="3300000">
                 <div class="image-gallery">
                     <div class="property-image" onclick="openModal('folio9', 0)">
-                        <img src="https://i.ibb.co/ym3Dp1TS/Folio-9.jpg" alt="Terreno">
+                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870917/Folio_9_o0s6b0.jpg" alt="Terreno">
                     </div>
                 </div>
                 <div class="property-header">
@@ -1207,7 +1183,7 @@
             <div class="property-card" data-type="terreno" data-city="tulancingo" data-price="13000000">
                 <div class="image-gallery">
                     <div class="property-image" onclick="openModal('folio10', 0)">
-                        <img src="https://i.ibb.co/DDZRFT7f/Folio-10.jpg" alt="Terreno">
+                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870918/Folio_10_nbryov.jpg" alt="Terreno">
                     </div>
                 </div>
                 <div class="property-header">
@@ -1229,7 +1205,7 @@
             <div class="property-card" data-type="terreno" data-city="tulancingo" data-price="11500000">
                 <div class="image-gallery">
                     <div class="property-image" onclick="openModal('folio11', 0)">
-                        <img src="https://i.ibb.co/tPzRrYKR/Folio-11.jpg" alt="Terreno Comercial">
+                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870918/Folio_11_y7lgbn.jpg" alt="Terreno Comercial">
                     </div>
                 </div>
                 <div class="property-header">
@@ -1252,7 +1228,7 @@
             <div class="property-card" data-type="hectareas" data-city="tulancingo" data-price="2100000">
                 <div class="image-gallery">
                     <div class="property-image" onclick="openModal('folio12', 0)">
-                        <img src="https://i.ibb.co/yn8HLnNx/Folio-12.jpg" alt="Hectáreas">
+                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870918/Folio_12_hwbh16.jpg" alt="Hectáreas">
                     </div>
                 </div>
                 <div class="property-header">
@@ -1274,7 +1250,7 @@
             <div class="property-card" data-type="terreno" data-city="tulancingo" data-price="420000">
                 <div class="image-gallery">
                     <div class="property-image" onclick="openModal('folio13', 0)">
-                        <img src="https://i.ibb.co/3mRJpz2D/Folio-13.jpg" alt="Terreno">
+                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870919/Folio_13_cyijsq.jpg" alt="Terreno">
                     </div>
                 </div>
                 <div class="property-header">
