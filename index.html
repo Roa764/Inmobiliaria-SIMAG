@@ -153,21 +153,6 @@
             object-fit: cover;
         }
 
-        .property-image.placeholder {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .property-image.placeholder::after {
-            content: 'Sin imagen';
-            font-size: 0.4em;
-            margin-top: 10px;
-            opacity: 0.8;
-        }
-
         .image-gallery {
             position: relative;
         }
@@ -265,7 +250,7 @@
             color: white;
         }
 
-        footer {
+        .contact-section {
             background: white;
             padding: 30px;
             border-radius: 15px;
@@ -288,6 +273,15 @@
             gap: 10px;
             color: #667eea;
             font-weight: 600;
+        }
+
+        footer {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         .modal {
@@ -369,13 +363,14 @@
             text-align: center;
             color: #666;
             font-size: 1.2em;
+            display: none;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <img src="https://i.ibb.co/jvVRjCHd/4.png" alt="Logo SIMAG" class="logo">
+            <img src="https://i.ibb.co/jvVRjCHd/4.png" alt="Logo SINAG" class="logo">
             <h1>INMOBILIARIA</h1>
             <p class="subtitle">Catálogo Completo de Propiedades Disponibles</p>
         </header>
@@ -402,7 +397,7 @@
         <div class="filters">
             <div class="filter-group">
                 <label>Tipo:</label>
-                <select id="filterType" onchange="filterProperties()">
+                <select id="filterType">
                     <option value="all">Todas</option>
                     <option value="casa">Casas</option>
                     <option value="terreno">Terrenos</option>
@@ -410,7 +405,7 @@
                 </select>
 
                 <label>Ciudad:</label>
-                <select id="filterCity" onchange="filterProperties()">
+                <select id="filterCity">
                     <option value="all">Todas</option>
                     <option value="tulancingo">Tulancingo</option>
                     <option value="cuautepec">Cuautepec</option>
@@ -423,7 +418,7 @@
 
         <div class="properties-grid" id="propertiesGrid">
             <!-- FOLIO 1 -->
-            <div class="property-card" data-type="terreno" data-city="tulancingo" data-price="705600">
+            <div class="property-card" data-type="terreno" data-city="tulancingo">
                 <div class="image-gallery">
                     <div class="property-image" onclick="openModal('folio1', 0)">
                         <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759882868/Folio_1._qq2vfu.jpg" alt="Terreno">
@@ -438,13 +433,294 @@
                     <div class="property-location">📍 Paseos de Tulancingo, Nuevo Tulancingo</div>
                     <div class="property-info">
                         <div class="info-item"><span class="info-icon">📐</span> 200 m²</div>
+                        <div class="info-item"><span class="info-icon">💰</span> Total: $960,000</div>
+                    </div>
+                    <span class="property-badge badge-nueva">Nueva</span>
+                </div>
+            </div>
+
+            <!-- FOLIO 2 -->
+            <div class="property-card" data-type="casa" data-city="tulancingo">
+                <div class="image-gallery">
+                    <div class="property-image" onclick="openModal('folio2', 0)">
+                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759882868/Folio_2._myyays.jpg" alt="Casa">
+                    </div>
+                </div>
+                <div class="property-header">
+                    <div class="property-folio">FOLIO 2</div>
+                    <div class="property-title">Casa</div>
+                    <div class="property-price">$4,100,000</div>
+                </div>
+                <div class="property-body">
+                    <div class="property-location">📍 La Guadalupe, Tulancingo</div>
+                    <div class="property-info">
+                        <div class="info-item"><span class="info-icon">🛏️</span> 3 recámaras</div>
+                        <div class="info-item"><span class="info-icon">🚿</span> 2 baños + 1 medio</div>
+                        <div class="info-item"><span class="info-icon">🏠</span> 120 m² const.</div>
+                        <div class="info-item"><span class="info-icon">📐</span> 400 m² terreno</div>
+                        <div class="info-item"><span class="info-icon">🏠</span> 2 niveles</div>
+                        <div class="info-item"><span class="info-icon">🚗</span> 1 estacionamiento</div>
+                    </div>
+                    <span class="property-badge badge-remodelacion">Requiere Remodelación</span>
+                </div>
+            </div>
+
+            <!-- FOLIO 3 -->
+            <div class="property-card" data-type="hectareas" data-city="tulancingo">
+                <div class="image-gallery">
+                    <div class="property-image" onclick="openModal('folio3', 0)">
+                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759883966/Folio_3._xu6ydv.jpg" alt="Hectáreas">
+                    </div>
+                </div>
+                <div class="property-header">
+                    <div class="property-folio">FOLIO 3</div>
+                    <div class="property-title">Hectáreas</div>
+                    <div class="property-price">$6,800,000</div>
+                </div>
+                <div class="property-body">
+                    <div class="property-location">📍 Carretera México-Tulancingo, San Gertrudis</div>
+                    <div class="property-info">
+                        <div class="info-item"><span class="info-icon">📐</span> 10 hectáreas</div>
+                        <div class="info-item"><span class="info-icon">🏗️</span> Gran desarrollo</div>
+                    </div>
+                    <span class="property-badge badge-nueva">Nueva</span>
+                </div>
+            </div>
+
+            <!-- FOLIO 4 -->
+            <div class="property-card" data-type="terreno" data-city="tulancingo">
+                <div class="image-gallery">
+                    <div class="property-image" onclick="openModal('folio4', 0)">
+                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759883967/Folio_4_lov5kg.jpg" alt="Terreno">
+                    </div>
+                </div>
+                <div class="property-header">
+                    <div class="property-folio">FOLIO 4</div>
+                    <div class="property-title">Terreno</div>
+                    <div class="property-price">$4,800,000</div>
+                </div>
+                <div class="property-body">
+                    <div class="property-location">📍 Calle Reforma 21 de Marzo, Centro, Tulancingo</div>
+                    <div class="property-info">
+                        <div class="info-item"><span class="info-icon">📐</span> 243 m²</div>
+                        <div class="info-item"><span class="info-icon">🚗</span> 1 estacionamiento</div>
+                    </div>
+                    <span class="property-badge badge-remodelacion">Requiere Remodelación</span>
+                </div>
+            </div>
+
+            <!-- FOLIO 5 -->
+            <div class="property-card" data-type="casa" data-city="cuautepec">
+                <div class="image-gallery">
+                    <div class="property-image" onclick="openModal('folio5', 0)">
+                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759883967/Folio_5_saifng.jpg" alt="Casa">
+                    </div>
+                </div>
+                <div class="property-header">
+                    <div class="property-folio">FOLIO 5</div>
+                    <div class="property-title">Casa</div>
+                    <div class="property-price">$1,250,000</div>
+                </div>
+                <div class="property-body">
+                    <div class="property-location">📍 Cuauhtémoc, Cuautepec</div>
+                    <div class="property-info">
+                        <div class="info-item"><span class="info-icon">🛏️</span> 2 recámaras</div>
+                        <div class="info-item"><span class="info-icon">🚿</span> 1 baño</div>
+                        <div class="info-item"><span class="info-icon">🏠</span> 90 m² const.</div>
+                        <div class="info-item"><span class="info-icon">📐</span> 294 m² terreno</div>
+                        <div class="info-item"><span class="info-icon">🏠</span> 1 nivel</div>
+                        <div class="info-item"><span class="info-icon">🚗</span> 1 estacionamiento</div>
+                    </div>
+                    <span class="property-badge badge-remodelacion">Requiere Remodelación</span>
+                </div>
+            </div>
+
+            <!-- FOLIO 6 -->
+            <div class="property-card" data-type="casa" data-city="tulancingo">
+                <div class="image-gallery">
+                    <div class="property-image" onclick="openModal('folio6', 0)">
+                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870917/Folio_6_sfr8r2.jpg" alt="Casa">
+                    </div>
+                </div>
+                <div class="property-header">
+                    <div class="property-folio">FOLIO 6</div>
+                    <div class="property-title">Casa</div>
+                    <div class="property-price">$2,500,000</div>
+                </div>
+                <div class="property-body">
+                    <div class="property-location">📍 Calle Hidalgo, Tulantepec, Tulancingo</div>
+                    <div class="property-info">
+                        <div class="info-item"><span class="info-icon">🛏️</span> 3 recámaras</div>
+                        <div class="info-item"><span class="info-icon">🚿</span> 2 baños</div>
+                        <div class="info-item"><span class="info-icon">🏠</span> 131 m² const.</div>
+                        <div class="info-item"><span class="info-icon">📐</span> 131 m² terreno</div>
+                        <div class="info-item"><span class="info-icon">🏠</span> 2 niveles</div>
+                        <div class="info-item"><span class="info-icon">🚗</span> 2 estacionamientos</div>
+                    </div>
+                    <span class="property-badge badge-remodelacion">Requiere Remodelación</span>
+                </div>
+            </div>
+
+            <!-- FOLIO 7 -->
+            <div class="property-card" data-type="terreno" data-city="tulancingo">
+                <div class="image-gallery">
+                    <div class="property-image" onclick="openModal('folio7', 0)">
+                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870917/Folio_7_jquczd.jpg" alt="Terreno">
+                    </div>
+                </div>
+                <div class="property-header">
+                    <div class="property-folio">FOLIO 7</div>
+                    <div class="property-title">Terreno</div>
+                    <div class="property-price">$6,500/m²</div>
+                </div>
+                <div class="property-body">
+                    <div class="property-location">📍 Fraccionamiento La Quinta, Centro, Tulancingo</div>
+                    <div class="property-info">
+                        <div class="info-item"><span class="info-icon">📐</span> 216 m²</div>
+                        <div class="info-item"><span class="info-icon">💰</span> Total: $1,404,000</div>
+                        <div class="info-item"><span class="info-icon">🚗</span> 1 estacionamiento</div>
+                    </div>
+                    <span class="property-badge badge-nueva">Nueva</span>
+                </div>
+            </div>
+
+            <!-- FOLIO 8 -->
+            <div class="property-card" data-type="casa" data-city="tulancingo">
+                <div class="image-gallery">
+                    <div class="property-image" onclick="openModal('folio8', 0)">
+                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870917/Folio_8_gmw2l3.jpg" alt="Casa">
+                    </div>
+                </div>
+                <div class="property-header">
+                    <div class="property-folio">FOLIO 8</div>
+                    <div class="property-title">Casa</div>
+                    <div class="property-price">$950,000</div>
+                </div>
+                <div class="property-body">
+                    <div class="property-location">📍 Rincones de la Hacienda, Tulancingo</div>
+                    <div class="property-info">
+                        <div class="info-item"><span class="info-icon">🛏️</span> 2 recámaras</div>
+                        <div class="info-item"><span class="info-icon">🚿</span> 1 baño</div>
+                        <div class="info-item"><span class="info-icon">🏠</span> 80 m² const.</div>
+                        <div class="info-item"><span class="info-icon">📐</span> 105 m² terreno</div>
+                        <div class="info-item"><span class="info-icon">🚗</span> 1 estacionamiento</div>
+                    </div>
+                    <span class="property-badge badge-buen-estado">Buen Estado</span>
+                </div>
+            </div>
+
+            <!-- FOLIO 9 -->
+            <div class="property-card" data-type="terreno" data-city="jaltepec">
+                <div class="image-gallery">
+                    <div class="property-image" onclick="openModal('folio9', 0)">
+                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870917/Folio_9_o0s6b0.jpg" alt="Terreno">
+                    </div>
+                </div>
+                <div class="property-header">
+                    <div class="property-folio">FOLIO 9</div>
+                    <div class="property-title">Terreno</div>
+                    <div class="property-price">$300/m²</div>
+                </div>
+                <div class="property-body">
+                    <div class="property-location">📍 Centro, Jaltepec</div>
+                    <div class="property-info">
+                        <div class="info-item"><span class="info-icon">📐</span> 11,000 m²</div>
+                        <div class="info-item"><span class="info-icon">💰</span> Total: $3,300,000</div>
+                    </div>
+                    <span class="property-badge badge-nueva">Nueva</span>
+                </div>
+            </div>
+
+            <!-- FOLIO 10 -->
+            <div class="property-card" data-type="terreno" data-city="tulancingo">
+                <div class="image-gallery">
+                    <div class="property-image" onclick="openModal('folio10', 0)">
+                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870918/Folio_10_nbryov.jpg" alt="Terreno">
+                    </div>
+                </div>
+                <div class="property-header">
+                    <div class="property-folio">FOLIO 10</div>
+                    <div class="property-title">Terreno</div>
+                    <div class="property-price">$1,000/m²</div>
+                </div>
+                <div class="property-body">
+                    <div class="property-location">📍 Atrás de la ICAP, San Miguel, Tulancingo</div>
+                    <div class="property-info">
+                        <div class="info-item"><span class="info-icon">📐</span> 13,000 m²</div>
+                        <div class="info-item"><span class="info-icon">💰</span> Total: $13,000,000</div>
+                    </div>
+                    <span class="property-badge badge-nueva">Nueva</span>
+                </div>
+            </div>
+
+            <!-- FOLIO 11 -->
+            <div class="property-card" data-type="terreno" data-city="tulancingo">
+                <div class="image-gallery">
+                    <div class="property-image" onclick="openModal('folio11', 0)">
+                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870918/Folio_11_y7lgbn.jpg" alt="Terreno Comercial">
+                    </div>
+                </div>
+                <div class="property-header">
+                    <div class="property-folio">FOLIO 11</div>
+                    <div class="property-title">Terreno Comercial</div>
+                    <div class="property-price">$11,500,000</div>
+                </div>
+                <div class="property-body">
+                    <div class="property-location">📍 Antigua Carretera México-Tuxpan, La Cañada, Tulancingo</div>
+                    <div class="property-info">
+                        <div class="info-item"><span class="info-icon">📐</span> 1,270 m²</div>
+                        <div class="info-item"><span class="info-icon">🏪</span> 4 locales</div>
+                        <div class="info-item"><span class="info-icon">🚗</span> 1 estacionamiento</div>
+                    </div>
+                    <span class="property-badge badge-remodelacion">Requiere Remodelación</span>
+                </div>
+            </div>
+
+            <!-- FOLIO 12 -->
+            <div class="property-card" data-type="hectareas" data-city="tulancingo">
+                <div class="image-gallery">
+                    <div class="property-image" onclick="openModal('folio12', 0)">
+                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870918/Folio_12_hwbh16.jpg" alt="Hectáreas">
+                    </div>
+                </div>
+                <div class="property-header">
+                    <div class="property-folio">FOLIO 12</div>
+                    <div class="property-title">Hectáreas</div>
+                    <div class="property-price">$600/m²</div>
+                </div>
+                <div class="property-body">
+                    <div class="property-location">📍 San Francisco Huatengo, Tulancingo</div>
+                    <div class="property-info">
+                        <div class="info-item"><span class="info-icon">📐</span> 3.5 hectáreas</div>
+                        <div class="info-item"><span class="info-icon">💰</span> Aprox: $2,100,000</div>
+                    </div>
+                    <span class="property-badge badge-nueva">Nueva</span>
+                </div>
+            </div>
+
+            <!-- FOLIO 13 -->
+            <div class="property-card" data-type="terreno" data-city="tulancingo">
+                <div class="image-gallery">
+                    <div class="property-image" onclick="openModal('folio13', 0)">
+                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870919/Folio_13_cyijsq.jpg" alt="Terreno">
+                    </div>
+                </div>
+                <div class="property-header">
+                    <div class="property-folio">FOLIO 13</div>
+                    <div class="property-title">Terreno</div>
+                    <div class="property-price">$420,000</div>
+                </div>
+                <div class="property-body">
+                    <div class="property-location">📍 Lomas Acatlán, Tulancingo</div>
+                    <div class="property-info">
+                        <div class="info-item"><span class="info-icon">📐</span> 105 m²</div>
                     </div>
                     <span class="property-badge badge-nueva">Nueva</span>
                 </div>
             </div>
 
             <!-- FOLIO 14 -->
-            <div class="property-card" data-type="casa" data-city="tulancingo" data-price="3800000">
+            <div class="property-card" data-type="casa" data-city="tulancingo">
                 <div class="image-gallery">
                     <div class="property-image" onclick="openModal('folio14', 0)">
                         <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870928/Folio_14_sacc95.jpg" alt="Casa">
@@ -470,7 +746,7 @@
             </div>
 
             <!-- FOLIO 15 -->
-            <div class="property-card" data-type="terreno" data-city="tulancingo" data-price="10560000">
+            <div class="property-card" data-type="terreno" data-city="tulancingo">
                 <div class="image-gallery">
                     <div class="property-image" onclick="openModal('folio15', 0)">
                         <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870928/Folio_15_fmtn0u.jpg" alt="Terreno">
@@ -492,10 +768,10 @@
             </div>
 
             <!-- FOLIO 16 -->
-            <div class="property-card" data-type="terreno" data-city="tulancingo" data-price="570360">
+            <div class="property-card" data-type="terreno" data-city="tulancingo">
                 <div class="image-gallery">
                     <div class="property-image" onclick="openModal('folio16', 0)">
-                        <img src="https://i.ibb.co/rG36Yb3H/Folio-16.jpg" alt="Terreno">
+                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870928/Folio_16_psrc4q.jpg" alt="Terreno">
                     </div>
                 </div>
                 <div class="property-header">
@@ -515,7 +791,7 @@
             </div>
 
             <!-- FOLIO 17 -->
-            <div class="property-card" data-type="casa" data-city="tulancingo" data-price="5800000">
+            <div class="property-card" data-type="casa" data-city="tulancingo">
                 <div class="image-gallery">
                     <div class="property-image" onclick="openModal('folio17', 0)">
                         <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870929/Folio_17_k79ntb.jpg" alt="Casa">
@@ -541,7 +817,7 @@
             </div>
 
             <!-- FOLIO 18 -->
-            <div class="property-card" data-type="terreno" data-city="tulancingo" data-price="285000">
+            <div class="property-card" data-type="terreno" data-city="tulancingo">
                 <div class="image-gallery">
                     <div class="property-image" onclick="openModal('folio18', 0)">
                         <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870929/Folio_18_ygcbg2.jpg" alt="Terreno">
@@ -562,7 +838,7 @@
             </div>
 
             <!-- FOLIO 19 -->
-            <div class="property-card" data-type="casa" data-city="santiago" data-price="850000">
+            <div class="property-card" data-type="casa" data-city="santiago">
                 <div class="image-gallery">
                     <div class="property-image" onclick="openModal('folio19', 0)">
                         <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870929/Folio_19_illxrf.jpg" alt="Casa">
@@ -587,14 +863,10 @@
             </div>
 
             <!-- FOLIO 20 -->
-            <div class="property-card" data-type="casa" data-city="tulancingo" data-price="1500000">
+            <div class="property-card" data-type="casa" data-city="tulancingo">
                 <div class="image-gallery">
                     <div class="property-image" onclick="openModal('folio20', 0)">
                         <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870944/Folio_20_l6tqt5.jpg" alt="Casa">
-                    </div>
-                </div><div class="image-gallery">
-                    <div class="property-image" onclick="openModal('folio20', 0)">
-                        <img src="https://i.ibb.co/DfMJg7n/Folio-20.jpg" alt="Casa">
                     </div>
                 </div>
                 <div class="property-header">
@@ -617,7 +889,7 @@
             </div>
 
             <!-- FOLIO 21 -->
-            <div class="property-card" data-type="casa" data-city="tulancingo" data-price="1950000">
+            <div class="property-card" data-type="casa" data-city="tulancingo">
                 <div class="image-gallery">
                     <div class="property-image" onclick="openModal('folio21', 0)">
                         <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870944/Folio_21_1_qd1sbm.jpg" alt="Casa Habitación">
@@ -642,7 +914,7 @@
             </div>
 
             <!-- FOLIO 22 -->
-            <div class="property-card" data-type="terreno" data-city="acaxochitlan" data-price="0">
+            <div class="property-card" data-type="terreno" data-city="acaxochitlan">
                 <div class="image-gallery">
                     <div class="property-image" onclick="openModal('folio22', 0)">
                         <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870960/Folio_22_reffn7.jpg" alt="Terreno">
@@ -664,7 +936,7 @@
             </div>
 
             <!-- FOLIO 23 -->
-            <div class="property-card" data-type="terreno" data-city="tulancingo" data-price="0">
+            <div class="property-card" data-type="terreno" data-city="tulancingo">
                 <div class="image-gallery">
                     <div class="property-image" onclick="openModal('folio23', 0)">
                         <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870960/Folio_23_btie8o.jpg" alt="Terreno Comercial">
@@ -687,7 +959,7 @@
             </div>
 
             <!-- FOLIO 24 -->
-            <div class="property-card" data-type="casa" data-city="tulancingo" data-price="1150000">
+            <div class="property-card" data-type="casa" data-city="tulancingo">
                 <div class="image-gallery">
                     <div class="property-image" onclick="openModal('folio24', 0)">
                         <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870960/Folio_24_entosb.jpg" alt="Casa">
@@ -709,7 +981,7 @@
             </div>
 
             <!-- FOLIO 25 -->
-            <div class="property-card" data-type="hectareas" data-city="tulancingo" data-price="0">
+            <div class="property-card" data-type="hectareas" data-city="tulancingo">
                 <div class="image-gallery">
                     <div class="property-image" onclick="openModal('folio25', 0)">
                         <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870961/Folio_25_2_mvd2gz.jpg" alt="Hectáreas">
@@ -732,7 +1004,7 @@
             </div>
 
             <!-- FOLIO 26 -->
-            <div class="property-card" data-type="terreno" data-city="tulancingo" data-price="500000">
+            <div class="property-card" data-type="terreno" data-city="tulancingo">
                 <div class="image-gallery">
                     <div class="property-image" onclick="openModal('folio26', 0)">
                         <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870961/Folio_26_vlvyld.jpg" alt="Terreno">
@@ -754,10 +1026,10 @@
             </div>
 
             <!-- FOLIO 27 -->
-            <div class="property-card" data-type="terreno" data-city="tulancingo" data-price="950000">
+            <div class="property-card" data-type="terreno" data-city="tulancingo">
                 <div class="image-gallery">
                     <div class="property-image" onclick="openModal('folio27', 0)">
-                        <img src="https://i.ibb.co/dsX5cdkx/Folio-27.jpg" alt="Terreno">
+                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870961/Folio_27_wad9jc.jpg" alt="Terreno">
                     </div>
                 </div>
                 <div class="property-header">
@@ -777,12 +1049,12 @@
             </div>
 
             <!-- FOLIO 28 -->
-            <div class="property-card" data-type="terreno" data-city="tulancingo" data-price="350000">
+            <div class="property-card" data-type="terreno" data-city="tulancingo">
                 <div class="image-gallery">
                     <div class="property-image" onclick="openModal('folio28', 0)">
-                        <img src="https://i.ibb.co/S7Mr93sy/Folio-28-1.jpg" alt="Terreno">
+                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870974/Folio_28_1_iwh6fk.jpg" alt="Terreno">
                     </div>
-                    <div class="gallery-counter">1 / 3</div>
+                    <div class="gallery-counter">1 / 2</div>
                 </div>
                 <div class="property-header">
                     <div class="property-folio">FOLIO 28</div>
@@ -801,13 +1073,12 @@
             </div>
 
             <!-- FOLIO 29 -->
-            <div class="property-card" data-type="casa" data-city="tulancingo" data-price="0">
+            <div class="property-card" data-type="casa" data-city="tulancingo">
                 <div class="image-gallery">
                     <div class="property-image" onclick="openModal('folio29', 0)">
-                        <img src="https://i.ibb.co/DPWtzTrg/Folio-29-1.jpg" alt="Casa en Venta">
+                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870975/Folio_29_1_agsgtr.jpg" alt="Casa en Venta">
                     </div>
-                    <div class="gallery-counter">1 / 5</div>
-                </div>folio29', 0)">🏠</div>
+                    <div class="gallery-counter">1 / 4</div>
                 </div>
                 <div class="property-header">
                     <div class="property-folio">FOLIO 29</div>
@@ -832,20 +1103,13 @@
             </div>
         </div>
 
-        <div class="no-results" id="noResults" style="display: none;">
+        <div class="no-results" id="noResults">
             No se encontraron propiedades con los filtros seleccionados. 😔
         </div>
 
-        <!-- Modal para ver imágenes en grande -->
-        <div id="imageModal" class="modal" onclick="closeModal()">
-            <span class="close-modal">&times;</span>
-            <span class="modal-nav modal-prev" onclick="event.stopPropagation(); changeImage(-1)">&#10094;</span>
-            <img class="modal-content" id="modalImage">
-            <span class="modal-nav modal-next" onclick="event.stopPropagation(); changeImage(1)">&#10095;</span>
-        </div>
-
-        <footer>
-            <h2 style="color: #667eea; margin-bottom: 20px;">📞 Contacto SIMAG</h2>
+        <!-- Sección de Contacto -->
+        <div class="contact-section">
+            <h2 style="color: #667eea; margin-bottom: 20px;">📞 Contacto SINAG</h2>
             <div class="contact-info">
                 <div class="contact-item">
                     <span>📱</span>
@@ -857,15 +1121,26 @@
                 </div>
                 <div class="contact-item">
                     <span>💙</span>
-                    <a href="https://web.facebook.com/profile.php?id=61562028989670" target="_blank" style="color: #667eea; text-decoration: none;">Facebook SIMAG</a>
+                    <a href="https://web.facebook.com/profile.php?id=61562028989670" target="_blank" style="color: #667eea; text-decoration: none;">Facebook SINAG</a>
                 </div>
             </div>
             <p style="margin-top: 20px; color: #666;">Haz realidad tus proyectos inmobiliarios con nosotros 🏡</p>
+        </div>
+
+        <!-- Modal para ver imágenes en grande -->
+        <div id="imageModal" class="modal" onclick="closeModal()">
+            <span class="close-modal">&times;</span>
+            <span class="modal-prev modal-nav" onclick="event.stopPropagation(); changeImage(-1)">&#10094;</span>
+            <img class="modal-content" id="modalImage">
+            <span class="modal-next modal-nav" onclick="event.stopPropagation(); changeImage(1)">&#10095;</span>
+        </div>
+
+        <footer>
+            <p style="color: #666;">© 2025 Inmobiliaria SINAG - Todos los derechos reservados</p>
         </footer>
     </div>
 
     <script>
-        // Almacén de imágenes por propiedad
         const propertyImages = {
             'folio1': ['https://res.cloudinary.com/diew9lmus/image/upload/v1759882868/Folio_1._qq2vfu.jpg'],
             'folio2': ['https://res.cloudinary.com/diew9lmus/image/upload/v1759882868/Folio_2._myyays.jpg'],
@@ -919,9 +1194,7 @@
 
         function openModal(propertyId, imageIndex) {
             const images = propertyImages[propertyId];
-            if (!images || images.length === 0) {
-                return;
-            }
+            if (!images || images.length === 0) return;
 
             currentPropertyId = propertyId;
             currentImageIndex = imageIndex;
@@ -954,32 +1227,36 @@
                 const cardType = card.getAttribute('data-type');
                 const cardCity = card.getAttribute('data-city');
 
-                let show = true;
+                const showType = (type === 'all' || cardType === type);
+                const showCity = (city === 'all' || cardCity === city);
+                
+                const show = showType && showCity;
 
-                if (type !== 'all' && cardType !== type) {
-                    show = false;
+                if (show) {
+                    card.style.display = 'flex';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
                 }
-
-                if (city !== 'all' && cardCity !== city) {
-                    show = false;
-                }
-
-                card.style.display = show ? 'flex' : 'none';
-                if (show) visibleCount++;
             });
 
-            document.getElementById('noResults').style.display = visibleCount === 0 ? 'block' : 'none';
+            const noResults = document.getElementById('noResults');
+            if (visibleCount === 0) {
+                noResults.style.display = 'block';
+            } else {
+                noResults.style.display = 'none';
+            }
         }
 
-        // Cerrar modal con tecla ESC
+        // Event listeners
+        document.getElementById('filterType').addEventListener('change', filterProperties);
+        document.getElementById('filterCity').addEventListener('change', filterProperties);
+
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
                 closeModal();
             }
-        });
-
-        // Navegación con flechas del teclado
-        document.addEventListener('keydown', function(event) {
+            
             if (document.getElementById('imageModal').style.display === 'block') {
                 if (event.key === 'ArrowLeft') {
                     changeImage(-1);
@@ -990,285 +1267,4 @@
         });
     </script>
 </body>
-</html>-item"><span class="info-icon">📐</span> 147 m²</div>
-                        <div class="info-item"><span class="info-icon">💰</span> Total: $705,600</div>
-                    </div>
-                    <span class="property-badge badge-nueva">Nueva</span>
-                </div>
-            </div>
-
-            <!-- FOLIO 2 -->
-            <div class="property-card" data-type="casa" data-city="tulancingo" data-price="4100000">
-                <div class="image-gallery">
-                    <div class="property-image" onclick="openModal('folio2', 0)">
-                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759882868/Folio_2._myyays.jpg" alt="Casa">
-                    </div>
-                </div>
-                <div class="property-header">
-                    <div class="property-folio">FOLIO 2</div>
-                    <div class="property-title">Casa</div>
-                    <div class="property-price">$4,100,000</div>
-                </div>
-                <div class="property-body">
-                    <div class="property-location">📍 La Guadalupe, Tulancingo</div>
-                    <div class="property-info">
-                        <div class="info-item"><span class="info-icon">🛏️</span> 3 recámaras</div>
-                        <div class="info-item"><span class="info-icon">🚿</span> 2 baños + 1 medio</div>
-                        <div class="info-item"><span class="info-icon">🏠</span> 120 m² const.</div>
-                        <div class="info-item"><span class="info-icon">📐</span> 400 m² terreno</div>
-                        <div class="info-item"><span class="info-icon">🏠</span> 2 niveles</div>
-                        <div class="info-item"><span class="info-icon">🚗</span> 1 estacionamiento</div>
-                    </div>
-                    <span class="property-badge badge-remodelacion">Requiere Remodelación</span>
-                </div>
-            </div>
-
-            <!-- FOLIO 3 -->
-            <div class="property-card" data-type="hectareas" data-city="tulancingo" data-price="6800000">
-                <div class="image-gallery">
-                    <div class="property-image" onclick="openModal('folio3', 0)">
-                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759883966/Folio_3._xu6ydv.jpg" alt="Hectáreas">
-                    </div>
-                </div>
-                <div class="property-header">
-                    <div class="property-folio">FOLIO 3</div>
-                    <div class="property-title">Hectáreas</div>
-                    <div class="property-price">$6,800,000</div>
-                </div>
-                <div class="property-body">
-                    <div class="property-location">📍 Carretera México-Tulancingo, San Gertrudis</div>
-                    <div class="property-info">
-                        <div class="info-item"><span class="info-icon">📐</span> 10 hectáreas</div>
-                        <div class="info-item"><span class="info-icon">🏗️</span> Gran desarrollo</div>
-                    </div>
-                    <span class="property-badge badge-nueva">Nueva</span>
-                </div>
-            </div>
-
-            <!-- FOLIO 4 -->
-            <div class="property-card" data-type="terreno" data-city="tulancingo" data-price="4800000">
-                <div class="image-gallery">
-                    <div class="property-image" onclick="openModal('folio4', 0)">
-                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759883967/Folio_4_lov5kg.jpg" alt="Terreno">
-                    </div>
-                </div>
-                <div class="property-header">
-                    <div class="property-folio">FOLIO 4</div>
-                    <div class="property-title">Terreno</div>
-                    <div class="property-price">$4,800,000</div>
-                </div>
-                <div class="property-body">
-                    <div class="property-location">📍 Calle Reforma 21 de Marzo, Centro, Tulancingo</div>
-                    <div class="property-info">
-                        <div class="info-item"><span class="info-icon">📐</span> 243 m²</div>
-                        <div class="info-item"><span class="info-icon">🚗</span> 1 estacionamiento</div>
-                    </div>
-                    <span class="property-badge badge-remodelacion">Requiere Remodelación</span>
-                </div>
-            </div>
-
-            <!-- FOLIO 5 -->
-            <div class="property-card" data-type="casa" data-city="cuautepec" data-price="1250000">
-                <div class="image-gallery">
-                    <div class="property-image" onclick="openModal('folio5', 0)">
-                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759883967/Folio_5_saifng.jpg" alt="Casa">
-                    </div>
-                </div>
-                <div class="property-header">
-                    <div class="property-folio">FOLIO 5</div>
-                    <div class="property-title">Casa</div>
-                    <div class="property-price">$1,250,000</div>
-                </div>
-                <div class="property-body">
-                    <div class="property-location">📍 Cuauhtémoc, Cuautepec</div>
-                    <div class="property-info">
-                        <div class="info-item"><span class="info-icon">🛏️</span> 2 recámaras</div>
-                        <div class="info-item"><span class="info-icon">🚿</span> 1 baño</div>
-                        <div class="info-item"><span class="info-icon">🏠</span> 90 m² const.</div>
-                        <div class="info-item"><span class="info-icon">📐</span> 294 m² terreno</div>
-                        <div class="info-item"><span class="info-icon">🏠</span> 1 nivel</div>
-                        <div class="info-item"><span class="info-icon">🚗</span> 1 estacionamiento</div>
-                    </div>
-                    <span class="property-badge badge-remodelacion">Requiere Remodelación</span>
-                </div>
-            </div>
-
-            <!-- FOLIO 6 -->
-            <div class="property-card" data-type="casa" data-city="tulancingo" data-price="2500000">
-                <div class="image-gallery">
-                    <div class="property-image" onclick="openModal('folio6', 0)">
-                        <img src="https://i.ibb.co/fdkgpN7C/Folio-6.jpg" alt="Casa Tulantepec">
-                    </div>
-                </div>
-                <div class="property-header">
-                    <div class="property-folio">FOLIO 6</div>
-                    <div class="property-title">Casa</div>
-                    <div class="property-price">$2,500,000</div>
-                </div>
-                <div class="property-body">
-                    <div class="property-location">📍 Calle Hidalgo, Tulantepec, Tulancingo</div>
-                    <div class="property-info">
-                        <div class="info-item"><span class="info-icon">🛏️</span> 3 recámaras</div>
-                        <div class="info-item"><span class="info-icon">🚿</span> 2 baños</div>
-                        <div class="info-item"><span class="info-icon">🏠</span> 131 m² const.</div>
-                        <div class="info-item"><span class="info-icon">📐</span> 131 m² terreno</div>
-                        <div class="info-item"><span class="info-icon">🏠</span> 2 niveles</div>
-                        <div class="info-item"><span class="info-icon">🚗</span> 2 estacionamientos</div>
-                    </div>
-                    <span class="property-badge badge-remodelacion">Requiere Remodelación</span>
-                </div>
-            </div>
-
-            <!-- FOLIO 7 -->
-            <div class="property-card" data-type="terreno" data-city="tulancingo" data-price="1404000">
-                <div class="image-gallery">
-                    <div class="property-image" onclick="openModal('folio7', 0)">
-                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870917/Folio_7_jquczd.jpg" alt="Terreno">
-                    </div>
-                </div>
-                <div class="property-header">
-                    <div class="property-folio">FOLIO 7</div>
-                    <div class="property-title">Terreno</div>
-                    <div class="property-price">$6,500/m²</div>
-                </div>
-                <div class="property-body">
-                    <div class="property-location">📍 Fraccionamiento La Quinta, Centro, Tulancingo</div>
-                    <div class="property-info">
-                        <div class="info-item"><span class="info-icon">📐</span> 216 m²</div>
-                        <div class="info-item"><span class="info-icon">💰</span> Total: $1,404,000</div>
-                        <div class="info-item"><span class="info-icon">🚗</span> 1 estacionamiento</div>
-                    </div>
-                    <span class="property-badge badge-nueva">Nueva</span>
-                </div>
-            </div>
-
-            <!-- FOLIO 8 -->
-            <div class="property-card" data-type="casa" data-city="tulancingo" data-price="950000">
-                <div class="image-gallery">
-                    <div class="property-image" onclick="openModal('folio8', 0)">
-                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870917/Folio_8_gmw2l3.jpg" alt="Casa">
-                    </div>
-                </div>
-                <div class="property-header">
-                    <div class="property-folio">FOLIO 8</div>
-                    <div class="property-title">Casa</div>
-                    <div class="property-price">$950,000</div>
-                </div>
-                <div class="property-body">
-                    <div class="property-location">📍 Rincones de la Hacienda, Tulancingo</div>
-                    <div class="property-info">
-                        <div class="info-item"><span class="info-icon">🛏️</span> 2 recámaras</div>
-                        <div class="info-item"><span class="info-icon">🚿</span> 1 baño</div>
-                        <div class="info-item"><span class="info-icon">🏠</span> 80 m² const.</div>
-                        <div class="info-item"><span class="info-icon">📐</span> 105 m² terreno</div>
-                        <div class="info-item"><span class="info-icon">🚗</span> 1 estacionamiento</div>
-                    </div>
-                    <span class="property-badge badge-buen-estado">Buen Estado</span>
-                </div>
-            </div>
-
-            <!-- FOLIO 9 -->
-            <div class="property-card" data-type="terreno" data-city="jaltepec" data-price="3300000">
-                <div class="image-gallery">
-                    <div class="property-image" onclick="openModal('folio9', 0)">
-                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870917/Folio_9_o0s6b0.jpg" alt="Terreno">
-                    </div>
-                </div>
-                <div class="property-header">
-                    <div class="property-folio">FOLIO 9</div>
-                    <div class="property-title">Terreno</div>
-                    <div class="property-price">$300/m²</div>
-                </div>
-                <div class="property-body">
-                    <div class="property-location">📍 Centro, Jaltepec</div>
-                    <div class="property-info">
-                        <div class="info-item"><span class="info-icon">📐</span> 11,000 m²</div>
-                        <div class="info-item"><span class="info-icon">💰</span> Total: $3,300,000</div>
-                    </div>
-                    <span class="property-badge badge-nueva">Nueva</span>
-                </div>
-            </div>
-
-            <!-- FOLIO 10 -->
-            <div class="property-card" data-type="terreno" data-city="tulancingo" data-price="13000000">
-                <div class="image-gallery">
-                    <div class="property-image" onclick="openModal('folio10', 0)">
-                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870918/Folio_10_nbryov.jpg" alt="Terreno">
-                    </div>
-                </div>
-                <div class="property-header">
-                    <div class="property-folio">FOLIO 10</div>
-                    <div class="property-title">Terreno</div>
-                    <div class="property-price">$1,000/m²</div>
-                </div>
-                <div class="property-body">
-                    <div class="property-location">📍 Atrás de la ICAP, San Miguel, Tulancingo</div>
-                    <div class="property-info">
-                        <div class="info-item"><span class="info-icon">📐</span> 13,000 m²</div>
-                        <div class="info-item"><span class="info-icon">💰</span> Total: $13,000,000</div>
-                    </div>
-                    <span class="property-badge badge-nueva">Nueva</span>
-                </div>
-            </div>
-
-            <!-- FOLIO 11 -->
-            <div class="property-card" data-type="terreno" data-city="tulancingo" data-price="11500000">
-                <div class="image-gallery">
-                    <div class="property-image" onclick="openModal('folio11', 0)">
-                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870918/Folio_11_y7lgbn.jpg" alt="Terreno Comercial">
-                    </div>
-                </div>
-                <div class="property-header">
-                    <div class="property-folio">FOLIO 11</div>
-                    <div class="property-title">Terreno Comercial</div>
-                    <div class="property-price">$11,500,000</div>
-                </div>
-                <div class="property-body">
-                    <div class="property-location">📍 Antigua Carretera México-Tuxpan, La Cañada, Tulancingo</div>
-                    <div class="property-info">
-                        <div class="info-item"><span class="info-icon">📐</span> 1,270 m²</div>
-                        <div class="info-item"><span class="info-icon">🏪</span> 4 locales</div>
-                        <div class="info-item"><span class="info-icon">🚗</span> 1 estacionamiento</div>
-                    </div>
-                    <span class="property-badge badge-remodelacion">Requiere Remodelación</span>
-                </div>
-            </div>
-
-            <!-- FOLIO 12 -->
-            <div class="property-card" data-type="hectareas" data-city="tulancingo" data-price="2100000">
-                <div class="image-gallery">
-                    <div class="property-image" onclick="openModal('folio12', 0)">
-                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870918/Folio_12_hwbh16.jpg" alt="Hectáreas">
-                    </div>
-                </div>
-                <div class="property-header">
-                    <div class="property-folio">FOLIO 12</div>
-                    <div class="property-title">Hectáreas</div>
-                    <div class="property-price">$600/m²</div>
-                </div>
-                <div class="property-body">
-                    <div class="property-location">📍 San Francisco Huatengo, Tulancingo</div>
-                    <div class="property-info">
-                        <div class="info-item"><span class="info-icon">📐</span> 3.5 hectáreas</div>
-                        <div class="info-item"><span class="info-icon">💰</span> Aprox: $2,100,000</div>
-                    </div>
-                    <span class="property-badge badge-nueva">Nueva</span>
-                </div>
-            </div>
-
-            <!-- FOLIO 13 -->
-            <div class="property-card" data-type="terreno" data-city="tulancingo" data-price="420000">
-                <div class="image-gallery">
-                    <div class="property-image" onclick="openModal('folio13', 0)">
-                        <img src="https://res.cloudinary.com/diew9lmus/image/upload/v1759870919/Folio_13_cyijsq.jpg" alt="Terreno">
-                    </div>
-                </div>
-                <div class="property-header">
-                    <div class="property-folio">FOLIO 13</div>
-                    <div class="property-title">Terreno</div>
-                    <div class="property-price">$420,000</div>
-                </div>
-                <div class="property-body">
-                    <div class="property-location">📍 Lomas Acatlán, Tulancingo</div>
-                    <div class="property-info">
-                        <div class="info
+</html>
